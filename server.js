@@ -12,14 +12,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-//Cashfree Route
-const hostedroute = require('./routes/stripe/hostedroute');
-const embeddedroute = require('./routes/stripe/embedded');
-const customroute = require('./routes/stripe/stripeCustom');
+//InstaMojo Route
 const instamojo = require('./routes/instamojo/instamojo');
-app.use("/hosted", hostedroute);
-app.use("/embedded", embeddedroute);
-app.use("/custom", customroute);
 app.use("/api", instamojo);
 
 // Starting Server
